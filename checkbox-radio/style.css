@@ -71,7 +71,7 @@ input{
 .radio_sprite+label,.checkbox_sprite+label{
     width:16px;
     height:16px;
-    background: url(ck/bg.png) no-repeat;
+    background: url(bg.png) no-repeat;
     display: inline-block;
 }
 .radio_sprite+label{
