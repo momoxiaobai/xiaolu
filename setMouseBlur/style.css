@@ -152,11 +152,12 @@ body{
     position:absolute;
     top:33%;
     left:15%;
-    display:block;
+    display:inline-block;
     font-size:33px;
-    transition:top 1s linear;
-    -webkit-transition:top 1s linear;
-    -moz-transition:top 1s linear;
+    font-family: 'Microsoft YaHei';
+    /*transition:top 1s linear;*/
+    /*-webkit-transition:top 1s linear;*/
+    /*-moz-transition:top 1s linear;*/
     animation:span 3s linear infinite;
     -webkit-animation:span 3s linear infinite;
     -moz-animation:span 3s linear infinite;
@@ -184,21 +185,22 @@ body{
     position:absolute;
     top:50%;
     left:37%;
-    display:block;
+    font-family: 'Microsoft YaHei';
+    display:inline-block;
     font-size:30px;
     text-decoration:none;
-    animation:span1 3s linear infinite;
+    color:green;
+    animation:span1 1s linear infinite;
     -webkit-animation:span1 3s linear infinite;
-    -moz-animation:span1 3s linear infinite;
+       -moz-animation:span1 3s linear infinite;
+        -ms-animation:span1 3s linear infinite;
+         -o-animation:span1 3s linear infinite;
 }
 @keyframes span1{
     0%{
         color:green;
     }
-    50%{
-        color:blue;
-    }
     100%{
-        color:green;
+        color:blue;
     }
 }
