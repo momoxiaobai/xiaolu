@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+/*大的div，整个内容 */
+.container{
+    width:310px;
+    height:530px;
+    border:1px solid lightgray;
+    margin:0 auto;
+    margin-top:40px;
+    box-shadow:0px 0px 4px 3px lightgray ;
+    text-align: center;
+}
+/*包含饼状load效果的div */
+.onLoad{
+    width:90px;
+    height:90px;
+    background-color: lightblue;
+    margin:0 auto;
+    margin-top:-45px;
+    position: relative;
+    top:50%;
+}
+/*圆环div */
+.circle{
+    width:88px;
+    height:88px;
+    border:2px solid #FF298C;
+    border-radius:50%;
+    text-align: center;
+    clip:rect()
+    -webkit-clip-path: polygon(44px 44px,0 0, 0px 92px,92px 92px,92px 0,60px 0);
+    -moz-clip-path: polygon(44px 44px,0 0, 0px 92px,92px 92px,92px 0,60px 0);
+    -ms-clip-path: polygon(44px 44px,0 0, 0px 92px,92px 92px,92px 0,60px 0);
+    -o-clip-path: polygon(44px 44px,0 0, 0px 92px,92px 92px,92px 0,60px 0);
+    clip-path: polygon(44px 44px,0 0, 0px 92px,92px 92px,92px 0,60px 0);
+    animation:circle 1.5s linear infinite;
+    -webkit-animation:circle 1.5s linear infinite;
+}
+@keyframes circle{
+    0%{
+        tranform:rotate(0deg);
+    }
+    50%{
+        transform:rotate(180deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.circleCake{
+    width:60px;
+    height:60px;
+    margin:0 auto;
+    border-radius:50%;
+    background-color: #FF298C;
+    position: absolute;
+    top:15px;
+    left:15px;
+
+}
+
+.circleCakeTop{
+    background-color: #FB8BBD;
+    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:15px;
+    left:15px;
+    animation:circleCake 2s linear infinite;
+    -webkit-animation:circleCake 2s linear infinite;
+    transform:rotate(45deg);
+}
+@keyframes circleCake{
+
+    0%{
+        -webkit-clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+        -moz-clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+        -o-clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+        -ms-clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+        clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+    }
+    12.5%{
+        -webkit-clip-path: polygon(30px 30px,0 0,60px 0,60px 0,60px 0,60px 0);
+        -moz-clip-path: polygon(30px 30px,0 0,60px 0,60px 0,60px 0,60px 0);
+        -ms-clip-path: polygon(30px 30px,0 0,60px 0,60px 0,60px 0,60px 0);
+        -o-clip-path: polygon(30px 30px,0 0,60px 0,60px 0,60px 0,60px 0);
+        clip-path: polygon(30px 30px,0 0,60px 0,60px 0,60px 0,60px 0);
+    }
+    25%{
+        -webkit-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,60px 60px,60px 60px);
+        -moz-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,60px 60px,60px 60px);
+        -ms-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,60px 60px,60px 60px);
+        -o-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,60px 60px,60px 60px);
+        clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,60px 60px,60px 60px);
+    }
+    37.5%{
+        -webkit-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 60px);
+        -moz-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 60px);
+        -ms-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 60px);
+        -o-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 60px);
+        clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 60px);
+    }
+    50%{
+        -webkit-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 0px);
+        -moz-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 0px);
+        -ms-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 0px);
+        -o-clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 0px);
+        clip-path: polygon(30px 30px,0 0,60px 0,60px 60px,0 60px,0px 0px);
+    }
+    62.5%{
+        -webkit-clip-path: polygon(30px 30px,60px 0px,60px 0,60px 60px,0 60px,0px 0px);
+        -moz-clip-path: polygon(30px 30px,60px 0px,60px 0,60px 60px,0 60px,0px 0px);
+        -ms-clip-path: polygon(30px 30px,60px 0px,60px 0,60px 60px,0 60px,0px 0px);
+        -o-clip-path: polygon(30px 30px,60px 0px,60px 0,60px 60px,0 60px,0px 0px);
+        clip-path: polygon(30px 30px,60px 0px,60px 0,60px 60px,0 60px,0px 0px);
+    }
+    75%{
+        -webkit-clip-path: polygon(30px 30px,60px 60px,60px 60px,60px 60px,0 60px,0px 0px);
+        -moz-clip-path: polygon(30px 30px,60px 60px,60px 60px,60px 60px,0 60px,0px 0px);
+        -ms-clip-path: polygon(30px 30px,60px 60px,60px 60px,60px 60px,0 60px,0px 0px);
+        -o-clip-path: polygon(30px 30px,60px 60px,60px 60px,60px 60px,0 60px,0px 0px);
+        clip-path: polygon(30px 30px,60px 60px,60px 60px,60px 60px,0 60px,0px 0px);
+    }
+    87.5%{
+        -webkit-clip-path: polygon(30px 30px,0px 60px,0px 60px,0px 60px,0 60px,0px 0px);
+        -moz-clip-path: polygon(30px 30px,0px 60px,0px 60px,0px 60px,0 60px,0px 0px);
+        -ms-clip-path: polygon(30px 30px,0px 60px,0px 60px,0px 60px,0 60px,0px 0px);
+        -o-clip-path: polygon(30px 30px,0px 60px,0px 60px,0px 60px,0 60px,0px 0px);
+        clip-path: polygon(30px 30px,0px 60px,0px 60px,0px 60px,0 60px,0px 0px);
+    }
+    100%{
+        -webkit-clip-path: polygon(30px 30px,0 0px,0px 0,0px 0px,0 0px,0 0px);
+        -moz-clip-path: polygon(30px 30px,0px 0,0px 0,0px 0px,0 0px,0 0px);
+        -ms-clip-path: polygon(30px 30px,0px 0,0px 0,0px 0px,0 0px,0 0px);
+        -o-clip-path: polygon(30px 30px,0px 0,0px 0,0px 0px,0 0px,0 0px);
+        clip-path: polygon(30px 30px,0px 0,0px 0,0px 0px,0 0px,0 0px);
+    }
+}
