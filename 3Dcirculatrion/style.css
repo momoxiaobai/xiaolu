@@ -10,9 +10,9 @@ html,body{
 }
 .contains{
     width:100%;
-/*     transform-style: preserve-3d; */
+    transform-style: preserve-3d;
     height:100%;
-/*     perspective:2000px; */
+    perspective:3000px;
     background-color: yellowgreen;
     margin:0 auto;
     margin-top:40px;
