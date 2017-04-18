@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>标签云</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="control">
+    <label>标签云显示内容：</label>
+    <textarea class="content" id="content" >
+请输入要显示的标签云内容，不输入则按照默认内容进行显示；输入的内容请以逗号分隔
+    </textarea><br/>
+    <label>标签云数量：</label>
+    <input class="number" id="number" placeholder="请输入20-500范围的整数，默认为120"><br/>
+    <label>标签云转速：</label>
+    <input class="speed" id="speed" placeholder="请输入大于0的数字，0表示不转，数字越大转速越快">
+</div>
+<div class="container" id="container">
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
