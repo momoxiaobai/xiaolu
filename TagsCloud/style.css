@@ -1,0 +1,55 @@
+*{
+    padding:0;
+    margin:0;
+}
+html,body{
+    perspective:5000px;
+}
+/*//3D标签云的容器div */
+.container{
+    width:420px;
+    height:420px;
+    position: relative;
+    border-radius: 50%;
+    text-align: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    margin:auto;
+    transform-style:preserve-3d;
+    perspective:1000px;
+    /*border:1px solid pink;*/
+}
+/*标签云的样式*/
+.label_item{
+    width:100px;
+    height:30px;
+    position:absolute;
+    font-weight: lighter;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    color: #0A0AEE;
+    margin: auto;
+    font-family: 'Tahoma';
+}
+/*控制台div*/
+.control{
+    float: left;
+    width:200px;
+    height:100px;
+    margin-left:20px;
+    margin-top:20px;
+}
+.content{
+    width:200px;
+    height:70px;
+    color:lightgray;
+    font-family:"Microsoft YaHei"
+}
+.number,.speed{
+    width:200px;
+    height:40px;
+}
