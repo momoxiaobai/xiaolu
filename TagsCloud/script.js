@@ -162,12 +162,26 @@ function move(elements){
         degreeX = Math.PI/100 * x * (getSpeed() || 1);
         degreeY = Math.PI/100 * y * (getSpeed() || 1);
     })
-    addEvent(container,'mouseout',function(){
+    addEvent(container,'mouseout',function(e){
+        console.log(e.clientX-this.offsetLeft,e.clientY)
         var speed = (getSpeed() || 1);
-        setTimeout(function(){
-            degreeX = 0;
-            degreeY = 0;
-        },4000)
+        var timer;
+        if(Math.pow((e.clientX-this.offsetLeft-220),2)+Math.pow((e.clientY-220),2) < Math.pow(220,2)){
+            degreeX = Math.PI/100 * x * (getSpeed() || 1);
+            degreeY = Math.PI/100 * y * (getSpeed() || 1);
+        }else{
+            timer = setInterval(function(){
+            degreeX = Math.PI/100 * x * speed;
+            degreeY = Math.PI/100 * y * speed;
+            speed -= 0.008;
+            if(speed < 0){
+                clearInterval(timer);
+            }
+        },17)
+
+        }
+
+
     })
     setInterval(function(){
         rotateX(elements,degreeX);
