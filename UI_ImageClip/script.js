@@ -237,5 +237,4 @@ function previewImg(x,y,width,height){
 }
 //进行后台传输
 function uploadImg(){
-
 }
