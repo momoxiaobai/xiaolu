@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+}
+.container{
+    width:700px;
+    height:600px;
+    box-shadow:  0 0 10px lightgray;
+    margin:0 auto;
+    margin-top:20px;
+    position: relative;
+}
+.files{
+    width:150px;
+    height:100px;
+    margin-top:30px;
+    margin-left:20px;
+    float:left;
+}
+.files input{
+    width:150px;
+    height:30px;
+    margin-bottom:10px;
+}
+
+#selectArea{
+    /*width:100px;*/
+    /*height:100px;*/
+    position: absolute;
+    display: none;
+    z-index:100;
+    top:0;
+    left:0;
+    /*background-color: red;*/
+    /*border:1px solid red;*/
+}
+
+#selectArea:hover{
+    cursor:move;
+}
+
+#preview{
+    box-shadow:  0 0 10px lightgray;
+}
