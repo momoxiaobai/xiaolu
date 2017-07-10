@@ -75,20 +75,23 @@ function pointerMove(){
     setInterval(function(){
         cxt.clearRect(0,0,canvas.width,canvas.height);
         clockStyle();
-        //date = new Date();
-        //hour = date.getHours();
-        //minutes = date.getMinutes();
-        //seconds = date.getSeconds();
+        date = new Date();
+        hour = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
         //millSeconds = date.getMilliseconds();
 
-        //degreeS = seconds * disDegreeOfSecond;
-        degreeS += disDegreeOfSecond * 17/1000;
-        degreeM += disDegreeOfMin * 17/1000;
-//        if(hour > 12){
-//            hour -= 12;
-//        }
-        degreeH += disDegreeOfHour * 17/1000;
+        degreeS = seconds * disDegreeOfSecond;
+       // degreeS += disDegreeOfSecond * 17/1000;
+       // degreeM += disDegreeOfMin * 17/1000;
+         degreeM = disDegreeOfMin * (seconds + minutes * 60);
+      if(hour > 12){
+           hour -= 12;
+        }
+        
+        degreeH = disDegreeOfHour * (seconds + minutes * 60 + hour * 3600);
+        //degreeH += disDegreeOfHour * 17/1000;
         clockPointerMove(degreeS,degreeM,degreeH);//每17毫秒，秒，分，时针应改变的度数；17毫秒动画比较平滑
-    },17);
+    },1000);
 
 }
