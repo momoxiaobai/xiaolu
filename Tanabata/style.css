@@ -1,0 +1,199 @@
+*{
+    padding:0;
+    margin:0;
+
+}
+body{
+    /*overflow: hidden;*/
+}
+ul,li{
+    list-style-type: none;
+}
+#boy{
+    width:300%;
+    height:645px;
+    position:absolute;
+    z-index:2;
+    overflow: hidden;
+}
+#boyCan{
+    width:4%;
+    height:291px;
+    position: absolute;
+    top:38%;
+    left:-3%;
+
+}
+/*@keyframes boyWalk{*/
+    /*0%{*/
+        /*left:-3%;*/
+    /*}*/
+    /*100%{*/
+        /*left:10%;*/
+    /*}*/
+/*}*/
+#content{
+    width:100%;
+    height:645px;
+    position:absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.float{
+    float:left;
+}
+#content_wrap{
+    width:100%;
+    height:100%;
+    position: absolute;
+    /*transition:left 3s;*/
+    /*-webkit-transition:left 3s;*/
+    /*clear:both;*/
+    /*position:relative;*/
+}
+#content_wrap,#content{
+    clear:both;
+}
+#content_wrap li{
+    width:33.33333333%;
+    height:100%;
+    float:left;
+    overflow: hidden;
+    /*position: relative;*/
+}
+
+.a_background_top{
+    width:100%;
+    height:71.6%;
+    background:url("images/background/a_background_top1.png") no-repeat ;
+    background-size: 100% 100%;
+    /*opacity: 0.5;*/
+}
+.a_background_middle{
+    width:100%;
+    height:13.1%;
+    background:url("images/background/a_background_middle.png") no-repeat ;
+    background-size: 100% 100%;
+}
+.a_background_bottom{
+    width:100%;
+    height:15.3%;
+    background:url("images/background/a_background_botton.png") no-repeat ;
+    background-size: 100% 100%;
+}
+.cloud1,.cloud2,.sun{
+    position: absolute;
+}
+.cloud1{
+    top:90px;
+    left:-1.5%;
+    animation:cloud1 15s linear;
+    -webkit-animation:cloud1 15s linear;
+}
+.cloud2{
+    /*top:1px;*/
+    left:4%;
+    animation:cloud2 15s linear;
+    -webkit-animation:cloud2 15s linear;
+}
+.sun{
+    top:0%;
+    left:28.5%;
+    /*right:0px;*/
+    animation:sun 14s linear;
+    -webkit-animation:sun 14s linear;
+}
+@keyframes cloud1{
+    0%{
+        left:-1.5%;
+    }
+    100%{
+        left:29%;
+    }
+}
+@keyframes cloud2{
+    0%{
+        left:4%;
+    }
+    100%{
+        left:-8%;
+    }
+}
+@keyframes sun{
+    0%{
+    left:28.5%;
+    }
+    100%{
+    left:2%;
+    top:6%;
+    }
+}
+.b_background{
+    width:100%;
+    height:100%;
+    background-image:url("images/QixiB-bright.png");
+    background-repeat: no-repeat ;
+    background-size: 100% 100%;
+}
+.door_left{
+    position: relative;
+    background-size: 100% 100%;
+    top:320.3px;
+    left:52.2%;
+    overflow: hidden;
+    height:154px;
+    width:6.33%;
+}
+.door_right{
+    position: relative;
+    background-size: 100% 100%;
+    top:166.0px;
+    left:58.54%;
+    overflow: hidden;
+    height:154px;
+    width:6.33%;
+    /*border:1px solid red;*/
+}
+.img{
+    position:relative;
+    left:0;
+    height:100%;
+    width:100%;
+}
+#bird{
+    /*width:91px;*/
+    /*height:71px;*/
+    /*border:1px solid red;*/
+    /*background-color: transparent;*/
+    /*position: relative;*/
+    /*top:-250px;*/
+    /*left:1550%;*/
+    /*display: inline;*/
+}
+
+#imgBird{
+    display:none;
+}
+.display{
+    display:none;
+}
+
+.c_background_top{
+    width:100%;
+    height:71.6%;
+    background:url("images/background/c_background_top.png") no-repeat ;
+    background-size: 100% 100%;
+}
+
+.c_background_middle{
+    width:100%;
+    height:13.1%;
+    background:url("images/background/c_background_middle.png") no-repeat ;
+    background-size: 100% 100%;
+}
+.c_background_bottom{
+    width:100%;
+    height:15.3%;
+    background:url("images/background/c_background_botton.png") no-repeat ;
+    background-size: 100% 100%;
+}

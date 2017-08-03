@@ -1,0 +1,118 @@
+.boy_walk1{
+    transition:all 7s linear;
+    -webkit-transintion:all 7s linear;
+    left:0;
+}
+.bg{
+    transition:left 7s linear;
+    -webkit-transintion:left 7s linear;
+    left:0px;
+}
+@-webkit-keyframes boy_walk1{
+    0%{
+        left:-3%;
+    }
+    100%{
+        left:80%
+    }
+}
+.boy_walk1_1{
+    -webkit-animation:boy_walk1_1 22s linear;
+    animation:boy_walk1_1 22s linear;
+}
+@keyframes boy_walk1_1{
+    0%{
+        left:80%;
+    }
+    50%{
+        left:77%;
+    }
+    100%{
+        left:76%;
+    }
+}
+.boy_pause{
+    -webkit-animation:boy_walk1 22s linear;
+    animation:boy_walk1 22s linear;
+    -webkit-animation-play-state:paused;
+    animation-play-state:paused;
+}
+.boy_small{
+    -webkit-animation:boy_small 5s linear;
+    animation:boy_small 5s linear;
+}
+
+@-webkit-keyframes boy_small{
+    0%{
+        width:4%;
+        height:291px;
+        /*left:17.7%;*/
+        opacity:1;
+        top:38%;
+    }
+    100%{
+        width:2%;
+        height:130px;
+        top:50%;
+        opacity:0;
+    }
+}
+.boy_big{
+    -webkit-animation:boy_big 5s linear;
+    animation:boy_big 5s linear;
+}
+@-webkit-keyframes boy_big{
+    0%{
+        width:2%;
+        height:130px;
+        opacity:0;
+        top:50%;
+    }
+    100%{
+        width:4%;
+        height:291px;
+        top:38%;
+        opacity:1;
+    }
+}
+.animation_pause{
+    animation:bgmove 10s linear;
+    -webkit-animation:bgmove 10s linear;
+    -webkit-animation-play-state:paused;
+    animation-play-state:paused;
+
+}
+.bgmove{
+    animation:bgmove 10s linear;
+    -webkit-animation:bgmove 10s linear;
+}
+@-webkit-keyframes bgmove{
+    0%{
+        left:0;
+    }
+    50%{
+        left:-100%;
+    }
+    100%{
+        left:-200%;
+    }
+
+}
+.boy_walk2{
+    animation:boy_walk2 6s linear;
+    -webkit-animation:boy_walk2 6s linear;
+}
+@keyframes boy_walk2{
+    0%{
+        left:18.7%;
+    }
+    100%{
+        left:6%;
+    }
+}
+.boy_walk2_pause{
+    animation:boy_walk2 20s linear;
+    -webkit-animation:boy_walk2 20s linear;
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>七夕</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="page2.css" type="text/css">
+    <link rel="stylesheet" href="page3.css" type="text/css">
+    <link rel="stylesheet" href="boywalk.css" type="text/css">
+</head>
+<body>
+<audio src="music/happy.wav" autoplay="autoplay"  id="music1" class="display">
+Your browser does not support the audio tag.
+</audio>
+<!--<audio src="music/circulation.wav" id="music2" class="display">-->
+<!--Your browser does not support the audio tag.-->
+<!--</audio>-->
+<div class="display" id="music"></div>
+<div id="content" min-height="100%">
+
+    <div id="boy">
+        <img src="images/原图/person/boy-walk.png" id="boyImg" class="display">
+        <img src="images/原图/person/boy-flower.png" id="boyFlower" class="display">
+        <img src="images/原图/person/boy-rotate.png" id="boyRotate" class="display">
+        <canvas id="boyCan">
+
+        </canvas>
+    </div>
+    <ul id="content_wrap">
+
+        <li>
+            <div class="a_background_top">
+                <div class='cloud1'>
+                    <img src="images/cloud1.png">
+                </div>
+                <div class='cloud2'>
+                    <img src="images/cloud2.png">
+                </div>
+                <div class='sun'>
+                    <img src="images/sun.png">
+                </div>
+
+            </div>
+            <div class="a_background_middle"></div>
+            <div class="a_background_bottom"></div>
+
+        </li>
+        <li>
+            <div class="b_background">
+                <div class="door_left">
+                    <img class="img" src="images/door-left.png">
+                </div>
+                <div class="door_right">
+                    <img class="img" src="images/door-right.png">
+                </div>
+                <img src="images/bird.png" id="imgBird">
+                <img src="images/sun.png" id="sun" class="display">
+                <canvas id="bird">
+
+                </canvas>
+            </div>
+        </li>
+        <li>
+            <div id="roses"></div>
+            <div class="c_background_top">
+                <div class="star star1">
+                    <img src="images/stars.png">
+                </div>
+                <div class="star star2">
+                    <img src="images/stars.png">
+                </div>
+                <div class="star star3">
+                    <img src="images/stars.png">
+                </div>
+                <div class="star star4">
+                    <img src="images/stars.png">
+                </div>
+                <div class="star star5">
+                    <img src="images/stars.png">
+                </div>
+                <div class="star star6">
+                    <img src="images/stars.png">
+                </div>
+                <img id="a_girl" src="images/girl.png">
+                <canvas id="my_girl">
+                </canvas>
+            </div>
+            <div class="c_background_middle">
+                <div class="water" id="water2"><img src="images/water.png"></div>
+                <div class="water" id="water4"><img src="images/water.png"></div>
+            </div>
+            <div class="c_background_bottom">
+                <div class="water" id="water1"><img src="images/water.png"></div>
+                <div class="water" id="water3"><img src="images/water.png"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="Page1.js"></script>
+<script src="page2.js"></script>
+<script src="page3.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

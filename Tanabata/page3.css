@@ -1,0 +1,206 @@
+.star{
+    width:30px;
+    height:31px;
+    position:relative;
+    animation:star 4s infinite linear;
+    -webkit-animation:star 4s infinite linear;
+}
+.star1{
+    top:20%;
+    left:20.3%;
+}
+.star2{
+    top:20%;
+    left:31%;
+    animation-delay:1.5s;
+    -webkit-animation-delay:1.5s;
+}
+.star3{
+    top:21%;
+    left:20%;
+    animation-delay:2.8s;
+    -webkit-animation-delay:2.8s;
+}
+.star4{
+    top:-5%;
+    left:65%;
+    animation-delay:1.3s;
+    -webkit-animation-delay:1.3s;
+}
+.star5{
+    top:18%;
+    left:70%;
+    animation-delay:3.2s;
+    -webkit-animation-delay:3.2s;
+}
+.star6{
+    top:3%;
+    left:85%;
+    animation-delay:2.6s;
+    -webkit-animation-delay:2.6s;
+}
+@keyframes star{
+    0%{
+        opacity:1;
+    }
+    20%{
+        opacity:0.75;
+    }
+    30%{
+        opacity:0.5;
+    }
+    40%{
+        opacity:0.25;
+    }
+    50%{
+        opacity:0.0;
+    }
+    60%{
+        opacity:0.0;
+    }
+    70%{
+        opacity:0.25;
+    }
+    80%{
+        opacity:0.5;
+    }
+    90%{
+        opacity:0.75;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.water{
+    /*width:854px;*/
+    height:27px;
+    overflow: hidden;
+    position: relative;
+}
+#water1{
+    width:261px;
+    left:35%;
+    top:22%;
+    animation:water1 8s infinite linear;
+    -webkit-animation:water1 8s infinite linear;
+}
+#water1 img{
+    position: absolute;
+
+}
+#water2{
+    width:130px;
+    left:41%;
+    top:58%;
+    animation:water2 8s infinite linear;
+    -webkit-animation:water2 8s infinite linear;
+}
+#water2 img{
+    position: absolute;
+    left:-261px;
+}
+#water3{
+    width:302px;
+    left:38%;
+    top:27%;
+    animation:water3 8s infinite linear;
+    -webkit-animation:water3 8s infinite linear;
+    animation-delay:1s;
+    -webkit-animation-delay:1s;
+}
+#water3 img{
+    position: absolute;
+    left:-391px;
+}
+#water4{
+    width:169px;
+    left:45%;
+    top:48%;
+    animation:water4 8s infinite linear;
+    -webkit-animation:water4 8s infinite linear;
+    animation-delay:1s;
+    -webkit-animation-delay:1s;
+}
+#water4 img{
+    position: absolute;
+    left:-693px;
+}
+@keyframes water1{
+    0%{
+        left:35%;
+    }
+    50%{
+        left:38%;
+    }
+    100%{
+        left:35%;
+    }
+}
+@keyframes water3{
+    0%{
+        left:38%;
+    }
+    50%{
+        left:41%;
+    }
+    100%{
+        left:38%;
+    }
+}
+@keyframes water2{
+    0%{
+        left:41%;
+    }
+    50%{
+        left:44%;
+    }
+    100%{
+        left:41%;
+    }
+}
+@keyframes water4{
+    0%{
+        left:45%;
+    }
+    50%{
+        left:48%;
+    }
+    100%{
+        left:45%;
+    }
+}
+#a_girl{
+    display: none;
+    background-color: pink;
+}
+#my_girl{
+    width:12%;
+    height:60%;
+    position: relative;
+    left:52%;
+    margin-top:-20px;
+}
+#roses{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:100;
+}
+.rose{
+    width:41px;
+    height:41px;
+    position: absolute;
+    animation:roseflake 8s infinite linear;
+    top:-10%;
+    -webkit-animation:roseflake 8s infinite linear;
+}
+@keyframes roseflake{
+    0%{
+        top:-30px;
+    }
+    100%{
+        top:90%;
+        transform:rotate(720deg) translateX(20px);
+        -webkit-transform:rotate(720deg) translateX(10px);
+    }
+}
