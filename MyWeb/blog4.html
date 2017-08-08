@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>引用类型（JavaScript第5章）</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/myWorld.css" type="text/css"/>
+    <link rel="stylesheet" href="css/article.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="nav" >
+        <ul class="nav_items">
+            <li><a href="index.html" class="nav_item index">首页</a></li>
+            <li><a href="information.html" class="nav_item information">个人简介</a></li>
+            <li><a href="showWork.html" class="nav_item show">小作品展示</a></li>
+            <li><a href="project.html" class="nav_item project">项目展示</a></li>
+            <li><a href="myWorld.html" class="nav_item myWorld">小鹿de小世界</a></li>
+        </ul>
+
+        <a href="information.html" id="name">
+            <div class="picture"></div>
+        </a>
+        <span class="signature">不要懒惰，还有懂事些......</span>
+    </div>
+    <div class="context">
+
+        <!--<div class="fold">-->
+            <!--<img src="images/add.png"/>-->
+            <!--<ul>-->
+                <!--<li>前端技术</li>-->
+                <!--<li>日常小确幸</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="blog">
+            <h2>引用类型（JavaScript第5章）</h2>
+                <span>
+引用类型的值（对象）是引用类型的一个实例。在ECMScript中，引用类型是一种数据结构，用于将数据和功能组织在一起。<br/>
+                  <h3>一、Object类型</h3>
+                    创建Object实例的方式有两种。第一种是使用new操作符后跟Object构造函数<br/>
+                    <pre>
+  var person = new Object();
+  person.naem = "xiaolu";
+  person.age = 25;</pre>
+                    另一种是使用对象字面量表示法。<br/>
+                    <pre>
+ var person = {
+  name : "xiaolu";
+  age : 25;
+ } </pre>
+一般来说，访问对象属性时使用的都是点表示法，这也是很多面向对象语言中通用的语法。不过，在JavaScript中也可以使用方括号表示法来访问对象的属性。<br/>
+                    <pre>
+  person[name];
+  person.name;</pre>
+                    方括号语法的主要优点是可以通过变量来访问属性
+                    <pre>
+   var propertyName = "name";
+   person[propertyName];    //xiaolu</pre>
+                    如果属性名中包含导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以通过方括号表示法
+                    <pre>
+   person["first name"] = "li"; </pre>
+                    由于"first name"中包含一个空格，所以不能使用点表示法来访问它。然而，属性名中是可以包含非字母非数字的，这时候就可以使用方括号表示法来访问它们。<br/>
+除非必须使用变量来访问属性，否则建议使用点表示法。
+                    <h3>二、Array类型</h3>
+<h4>（1）创建数组</h4>
+
+创建数组的基本方式有两种。第一种是使用Array构造函数
+                    <pre>
+  var colors = new Array();</pre>
+                    如果预先知道数组要保存的项目数量，也可以给构造函数传递该数量，而该数量会自动变成length属性的值
+                    <pre>
+  var colors = new Array(20);
+  var names = new Array("xiaolu");    //创建一个包含1项，即字符串“xiaolu”的数组
+  var colors = Array(3);    //创建一个包含3项的数组，可以省略new操作符</pre>
+                    创建数组的第二种基本方式是使用数组字面量表示法。
+                    <pre>
+  var colors = ["red","blue","green"];
+  var names = []; </pre>
+                    数组的length属性很有特点——它不是只读的。设置这个属性，可以从数组的末尾移除项或向数组中添加新项。
+                    <pre>
+  var colors = ["red","blue","green"];
+  colors.length = 2;
+  colors[2];    //undefined </pre>
+                    如果将其length设置为大于数组项数的值，则新增的每一项都会取得undefined值
+                    <pre>
+  var colors = ["red","blue","green"];
+  colors.length = 4;
+  colors[3];                   // undefined;</pre>
+                    利用length属性也可以方便地在数组末尾添加新项
+                    <pre>
+  var colors = ["red","blue","green"];
+  colors[colors.length] = "black";     //在（位置3）添加一种颜色
+  colors[colors.length] = "brown";  //在（位置4）再添加另一种颜色</pre>
+                    当把一个值放在超出当前数组大小的位置上时，数组就会重新计算其长度值，即长度值等于最后一项的索引加1
+                    <pre>
+  var colors = ["red","blue","green"];
+  colors[99] = "black";
+  colors.length;    //100</pre>
+                    <h4>（2）检测数组</h4>
+
+ECMScript5新增了Array.isArray()方法。目的是最终确定某个值到底是不是数组。
+                    <pre>
+  if(Array.isArray(value)){
+  //对数组执行某些操作
+  }</pre>
+                    <h4>（3）转换方法</h4>
+
+调用数组的toString()方法会返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。而调用valueOf()返回的实数数组。<br/>
+
+如果使用join()方法，则可以使用不同的分隔符来构建这个字符串。join()方法只接收一个参数，即用作分隔符的字符串，然后返回包含数组项的字符串。
+<pre>
+   var colors = ["red","green","blue"];
+   alert(colors.join(","));      //red,green,blue;
+   alert(colors.join("||"));     //red||green||blue;</pre>
+                    <h4>（4）栈方法</h4>
+
+push()方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。而pop()方法则从数组末尾移除最后一项，减少数组的length值，然后返回移除的项。
+
+<pre>
+   var colors = ["red","blue"];
+   colors.push("brown");
+   colors[3] = "black";
+   alert(colors.length);   //4
+
+   var item = colors.pop();
+   alert(item);     //"black";</pre>
+                    <h4>（5）队列方法</h4>
+
+队列在列表的末端添加项，从列表的前端移除项。<br/>
+
+数组方法shift()，能够移除数组中的第一个项并返回该项，同时将数组的长度减1.结合使用shift()和push()方法，可以像使用队列一样使用数组。
+<pre>
+   var colors = new Array();
+   var count = colors.push("red","green");
+   alert(count);  //2
+
+   count = colors.push("black");
+   alert(count);    //3
+
+   var item = colors.shift();
+   alert(item);    //"red"
+   alert(colors.length);    //2</pre>
+                    ECMScript还为数组提供了一个unshift()方法。其用法与shift()的用途相反：它能在数组前端添加任意个项并返回新数组的长度。因此，同时使用unshift()和pop()方法，可以从相反的方向模拟队列，即在数组的前端添加项，从数组末端移除项。
+                    <pre>
+   var colors = new Array();
+   var count = colors.unshift("red","green");
+   alert(count);   //2
+
+   count = colors.unshift("black");
+   alert(count);   //3
+
+   var item = colors.pop();
+   alert(item);   //"green";
+   alert(colors.length);   //2</pre>
+                    <h4>（6）重排序方法</h4>
+
+数组中已经存在两个可以直接用来重排序的方法：reverse()和sort()。<br/>
+
+reverse()方法会反转数组项的顺序
+                    <pre>
+   var values = [1,2,3,4,5];
+   values.reverse();
+   alert(values);     //5,4,3,2,1</pre>
+                    在默认情况下，sort()方法按照升序排列数组项——即最小的值位于最前面，最大的值排在最后面。sort()方法会调用每个数组的toString()转型方法，然后比较得到的字符串，以确定如何排序。即使数组中的每一项都是数值sort()方法比较的也是字符串。
+                    <pre>
+  var values = [0,1,5,10,15];
+  values.sort();
+  alert(values);    //0,1,10,15,5</pre>
+sort()接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面
+                    <pre> function compare(value1,value2){
+     if(value1 < value2){
+         return -1;
+     }else if(value1 > value2){
+         return 1;
+     }else{
+         return 0;
+     }
+
+}
+
+
+var values = [0,1,5,10,15];
+sort(compare);
+alert(values);   //0,1,5,10,15
+
+如果
+function compare(value1,value2){
+     if(value1 < value2){
+         return 1;
+     }else if(value1 > value2){
+         return -1;
+     }else{
+         return 0;
+     }
+
+}
+
+
+var values = [0,1,5,10,15];
+sort(compare);
+alert(values);   //15,10,5,1,0</pre>
+<h4>（6）操作方法</h4>
+
+1、concat()方法。可以基于当前数组中的所有项创建一个新数组。具体的说，这个方法会创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，最后返回新创建的数组。
+<pre>var colors = ["red","green","blue"];
+var colors2 = colors.concat("yellow",["black","brown"];
+
+alert(colors);   //red,green,blue
+alert(colors2);   //red,green,blue,yellow,black.brown</pre>
+                    2、slice()方法可以接受一个或者两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。slice()方法不会影响原始数组。
+                    <pre>var colors = ["red","green","blue","purple"];
+var colors2 = colors.slice(1);
+var colors3 = colors.slice(1,4);
+
+alert(colors2);   //green,blue,yellow,purpler
+alert(colors3);   //green,blue,yellow</pre>
+                    如果slice()方法的参数中有一个负数，则用数组长度加上该数来确定相应的位置。
+
+3、splice()方法，使用这种方法的方式有三种：<br/>
+
+删除：可以删除任意数量的项，只需指定2个参数：要删除的第一项的位置和要删除的项数。例如。splice(0,2)会删除数组中的前两项。<br/>
+
+插入：可以向指定位置插入任意数量的项，只需提供3个参数：起始位置、0（要删除的项数）和要插入的项。如果要插入多个项，可以再传入第四、第五，以至任意多个项。例如，splice(2,0,"red","green")会从当前数组位置2开始插入字符串“red"和”green“<br/>
+
+替换：可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定3个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的像素不必与删除的项数相等。例如，splice(2,1,"red”,"green")会删除当前数组位置2的项，然后再从位置2开始插入字符串“red"和”green“<br/>
+
+splice()方法始终都会返回一个数组，该数组中包含从原始数组中删除的项。
+                  <h3>三、RegExp类型</h3>
+var expression = /pattern/flags；<br/>
+
+g：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；<br/>
+
+i ：表示不区分大小写模式，即在确定匹配项时忽略模式与字符串的大小写；<br/>
+
+m：表示多行模式，即在到大一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。<br/>
+                <h4>（1）RegExp实例属性</h4>
+global：布尔值，表示是否设置了g标志<br/>
+
+ignoreCase：布尔值，表示是否设置了i标志<br/>
+
+lastIndex：整数，表示开始搜索下一个匹配项的字符位置，从0算起<br/>
+
+multiline：布尔值，表示是否设置了m标志<br/>
+
+source：正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回<br/>
+
+<h4>（2）RegExp实例方法</h4>
+RegExp对象的主要方法是exec()，该方法是专门为捕获组而设计的。exec()接受一个参数，即要应用模式的字符串，然后返回包含第一个匹配项信息的数组，或者在没有匹配的情况下返回null。返回的数组虽然是Array的实例，但包含两个额外的属性：index和input。其中，index表示匹配项在字符串中的位置，而input表示应用正则表达式的字符串。在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中捕获组匹配的字符串
+<pre>
+var text = "mom and dad and baby";
+var pattern = /mon( and dad( and baby)?)?/gi;
+
+var matches = pattern.exec(text);
+alert(marches.index);    //0
+alert(matches.input);    //"mom and dad and baby"
+alert(matches[0]);        //"mom and dad and baby"
+alert(matches[1]);        //" and dad and baby"
+alert(matches[2]);        //" and baby"</pre>
+                对于exec()方法而言，即使在模式中设置了全局模式（g），它每次也只会返回一个匹配项。在不设置全局标志的情况下，在同一个字符串上多次调用exec()将始终返回第一个匹配项的信息。而在设置全局标志的情况下，每次调用exec()则都会在字符串中继续查找新匹配项
+<pre>var text = "cat, bat, sat, fat";
+var pattern1 = /.at/;
+
+var matches = pattern1.exec(text);
+alert(matches.index); //0
+alert(matches[0]);   //cat
+alert(pattern1.lastIndex);  //0
+
+matches = pattern1.exec(text);
+alert(matches.index); //0
+alert(matches[0]);   //cat
+alert(pattern1.lastIndex);  //0
+
+var pattern2 = /.at/g;
+
+var matches = pattern2.exec(text);
+alert(matches.index); //0
+alert(matches[0]);   //cat
+alert(pattern2.lastIndex);  //3
+
+matches = pattern2.exec(text);
+alert(matches.index); //05
+alert(matches[0]);   //bat
+alert(pattern2.lastIndex);  //8</pre>
+                正则表达式的第二个方法是test()，它接受一个字符串参数
+                <pre>var text = "000-00-0000";
+var pattern = /\d{3}-\d{2}-\d{4}/;
+
+if(pattern.test(text)){
+alert("The pattern was matched");
+}</pre>
+<h3>四、Function类型</h3>
+<h4>（1）函数声明和函数表达式</h4>
+实际上，解析器在向执行环境中加载数据时，对函数声明和函数表达式并非一视同仁。解析器会率先读取函数声明，并使其在执行任何代码之前可用（可用访问），至于函数表达式，则必须等到解析器执行到它所在的代码行才会真正被解释执行。
+<pre>alert(sum(10,10));
+function sum(num1,num2){
+return num1 + num2;
+}</pre>
+                可以正常执行，因为在代码开始执行之前，解析器就已经通过一个名为函数声明提升的过程，读取并将函数声明添加到执行环境中。即使声明函数的代码在调用它的代码后面，JavaScript引擎也能把函数声明提升到顶部·
+                <pre>alert(sum(10,10));
+var sum = function(num1,num2){
+return num1 + num2;
+}</pre>
+                以上代码就会在运行期间产生错误，原因在于函数位于一个初始化语句中，而不是一个函数声明。换句话就是，在执行到函数所在语句之前，变量sum中不会保存有对函数的引用。
+                <h4>（2）函数属性和方法</h4>
+在函数内部，有两个特殊对象：arguments和this。<br/>
+
+每个函数都有包含两个属性：length和prototype。其中，length属性表示函数希望接收的命名参数的个数。<br/>
+
+prototype是保存它们所有实例方法的真正所在。即诸如toString()和valueOf()等方法实际上都保存在prototype名下。<br/>
+
+每个函数都包含两个非继承而来的方法：apply() 和call()。<br/>
+
+首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。call()方法和apply()方法的作用相同，它们的区别仅在于接收参数的方式不同。对于call()方法而言，第一个参数没有变化，变化的是其余参数都直接传递给函数，就是使用call()方法时，传递给函数的参数必须逐个列举出来。
+
+它们真正强大的地方是能够扩充函数赖以运行的作用域。
+                <pre>window.color = "red";
+var o = {color:"blue"};
+
+function sayColor(){
+alert(this.color);
+}
+
+sayColor();  //red
+
+sayColor.call(this);  //red
+sayColor.call(window);  //red
+sayColor.call(o);   //blue</pre>
+                还有一个方法：bind()。这个方法会创建一个函数的实例，其this值会被绑定到传给bind()函数的值
+                <pre>window.color = "red";
+var o = {color:"blue"};
+
+function sayColor(){
+alert(this.color);
+}
+
+var objectSayColor = sayColor.bind(o);
+objectSayColor();   //blue</pre>
+
+                </span>
+            <a href="blog3.html" class="last">
+                <<< JavaScript中离线应用和客户端存储
+            </a>
+            <a href="blog5.html" class="next">
+                关于自定义checkbox-radio标签的样式的方法 >>>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="myInfor">
+            <li>Tel 15229358320</li>
+            <li>Email 1029414295@qq.com</li>
+            <li>QQ 1029414295</li>
+            <li>School 西安电子科技大学</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<!--<script src="js/myWorld.js"></script>-->
+</body>
+</html>

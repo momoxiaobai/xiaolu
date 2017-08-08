@@ -1,0 +1,115 @@
+
+.nav_items .show{
+    color:darkorange;
+}
+.context{
+    width:955px;
+    margin:0 auto;
+    /*background-color: #FFEDEA;*/
+    height:1600px;
+    perspective:2000px;
+}
+/*展示作品的方块区域*/
+.work{
+    position: relative;
+    width:300px;
+    height:300px;
+    float:left;
+    box-shadow: 0 0 3px rgb(84, 46, 69);
+    margin:8px 8px;
+    cursor:pointer;
+    overflow: hidden;
+}
+.work:hover{
+    box-shadow: 0 0 18px rgb(84, 46, 69);
+}
+/*第一个项目展示图片*/
+.work img{
+    height:auto;
+    box-shadow: 0 0 10px rgb(196,196,196);
+    width:252px;
+}
+.work img:nth-of-type(1){
+
+}
+.work img:nth-of-type(2){
+    margin-top:-35px;
+    margin-left:20px;
+    /*left:10px;*/
+}
+.work img:nth-of-type(3){
+    margin-top:-35px;
+    margin-left:40px;
+}
+/*遮盖层*/
+.cover{
+    position: absolute;
+    width:300px;
+    height:300px;
+    background-color: rgba(128, 128, 128, 0.25);
+    text-align:center;
+    visibility: hidden;
+    top:-300px;
+    transition:all .5s linear;
+}
+/*文字描述*/
+.describe{
+    color:darkorange;
+    line-height:300px;
+    font-weight:bold;
+}
+.work .workImages{
+    width:300px;
+    height:auto;
+}
+/*倒计时GIF动图*/
+.work .countdown{
+    margin-top:60px;
+}
+/*颜色选择器*/
+.work .colorSelector{
+    margin-top:40px;
+}
+/*有趣的鼠标悬浮效果*/
+.work .mouseOver{
+    margin-top:60px;
+}
+/*图片剪裁器*/
+.work .selectImg{
+    margin-top:40px;
+}
+/*3D轮播图*/
+.work .circle{
+    margin-top:70px;
+}
+/*标签云*/
+.work .labelCloud{
+    margin-top:75px;
+}
+/*模拟时钟*/
+.work .clock{
+    margin-top:5px;
+}
+/*瀑布流相册*/
+.work .waterfallPhotos{
+    height:300px;
+}
+/*日历组件*/
+.work .calender{
+    height:300px;
+}
+/*树形组件*/
+.work .trees{
+    height:300px;
+}
+/*听指令的小方块*/
+.work .blockMove{
+    margin-top:50px;
+}
+/*动态添加表单并验证*/
+.work .formAdd{
+    margin-top:90px;
+}
+
+
+

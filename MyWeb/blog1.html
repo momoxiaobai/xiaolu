@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript高级程序设计中第2、3章中细节知识点</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/myWorld.css" type="text/css"/>
+    <link rel="stylesheet" href="css/article.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="nav" >
+        <ul class="nav_items">
+            <li><a href="index.html" class="nav_item index">首页</a></li>
+            <li><a href="information.html" class="nav_item information">个人简介</a></li>
+            <li><a href="showWork.html" class="nav_item show">小作品展示</a></li>
+            <li><a href="project.html" class="nav_item project">项目展示</a></li>
+            <li><a href="myWorld.html" class="nav_item myWorld">小鹿de小世界</a></li>
+        </ul>
+
+        <a href="information.html" id="name">
+            <div class="picture"></div>
+        </a>
+        <span class="signature">不要懒惰，还有懂事些......</span>
+    </div>
+    <div class="context">
+
+        <!--<div class="fold">-->
+            <!--<img src="images/add.png"/>-->
+            <!--<ul>-->
+                <!--<li><a href="myWorld.html">前端技术</a></li>-->
+                <!--<li><a href="myWorld.html">日常小确幸</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="blog">
+            <h2>JavaScript高级程序设计中第2、3章中细节知识点</h2>
+                <span>
+                       <h3>第2章</h3>
+                    1、&ltscript src='script.js' type='text/javascript'>&ltscript&gt中，只要不包含defer和async属性，浏览器都会按照&ltscript&gt<br/>
+                    元素在页面的出现顺序对它们依次进行解析。<br/>
+                    2、defer属性     &ltscript&gt中的defer属性的用途是表明脚本在执行时不会影响页面的构造，即，脚本会被延迟到整个页面都解析完毕<br/>
+                    后在运行。所以设置了defer属性就是相当于告诉浏览器立即下载但延迟执行。defer=“defer”；<br/>
+                    3、async属性   &ltscript type="text/javascript" async src="script.js">&lt/script>指定async属性的目的是不让页面等待脚本下载和<br/>
+                    执行，从而异步加载页面其他内容。为此，建议异步脚本不要在加载期间修改DOM。<br/>
+                    4、嵌入外部script的好处：a、可维护性；b、可缓存，如果有两个页面都使用同一个文件，那么这个文件只需要下载一次，所以，<br/>
+                    最终结果就是能够加快页面加载的速度；c、适应未来。
+                    <h3>第3章</h3>
+                    1、在脚本中添加"use strict";  启用严格模式；<br/>
+                    2、数据类型：5种简单数据类型（也称为基本数据类型）：Undefined Null Boolean Number String。一种复杂数据类型：Object。<br/>
+                    3、typeof操作符---“object”——如果这个值是对象或者null；“function”——如果这个值是函数。typeof是一个操作符而不是一个函数。<br/>
+                    4、undefined  对于未声明的变量只能执行一项操作，即使用typeof操作符检测其数据类型。
+                        <pre>
+                        var message;
+                        //未声明
+                        //var age;
+                        alert(message);          //undefined
+                        alert(age);               //产生错误
+                        alert(typeof message);   //undefined
+                        alert(typeof age);       //undefined</pre>
+                    5、Null    null表示一个空对象指针，所以使用typeof操作符检测null值时会返回‘object’。实际上，undefined是派生自<br/>
+                    null值的，所以alert(undefined == null);  //true;
+                    只要意在保存对象的变量还没有真正保存对象，就应该明确的让该变量保存null值。<br/>
+                    6、Boolean  要将一个值转换为其对应的Boolean值，可以调用转型函数Boolean();<br/>
+                    7、Number   八进制字面值的第一位必须是零（0），八进制数字序列（0—7）。如果字面值中的数值超出了范围，那么前导零将被忽略，后面的数值将被当作十进制数值解析。
+                        <pre>
+                        var num1 = 070;    //八进制的56；
+                        var num2 = 79;     //无效的八进制数值----解析为79；</pre>
+                    十六进制字面值前两位必须是0x;<br/>
+进行算术计算时，所有的八进制和十六进制表示的数值最终都将被转换成十进制数值。<br/>
+浮点数值的最高精度是17为小数。<br/>
+8、NaN    即非数值  是一个特殊的数值。首先， 0除以0返回NaN，正数除以0返回Infinity，负数除以0得-Infinity；其次，<br/>
+                    NaN与任何值都不相等，包括本身。
+9、String类型  字符串特点：字符串是不可变的，也就是，字符串一旦创建，它们的值就不能改变。要改变某个变量保存的字符串，首次要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量。
+                        <pre>
+                        var lang = "Java";
+                        lang  = lang + "Script";
+操作过程如下：首先创建一个能容纳10个字符的新字符串，然后在这个字符串中填充“Java”和“Script”，最后异步是销
+毁原来的字符串“Java”和字符串“Script”；</pre>
+                    关于toString()和String():toString()数值、布尔值、对象和字符串值都有这个方法；但是undefined和null没有这个方法。多数情况下，调用toString()方法不必传递参数
+                        <pre>
+                        var num = 10;
+                        num.toString(2);   //"1010";
+                        num.toString(8);   //"12";
+                        num.toString(16);  //"a";</pre>
+                    不知道要转换的值是不是null和undefined的情况下，可以使用String():1、如果值有toString()方法，则调用该方法并返回相应的结果；2、如果是null返回”null”，undefined返回“undefined”<br/>
+
+10、布尔操作符<br/>
+
+逻辑与&&：逻辑与操作属于短路操作，即如果第一个操作数能够决定结果，那么不会再对第二个操作数求值<br/>
+
+逻辑或||：如果第一个操作数的求值结果为true，就不会对第二个操作数求值了。<br/>
+
+11、相等和不相等（==  ===  !=  !==）:如果有一个操作数是布尔值，则在比较相等性之前先将其转换为数值——false转换为0，true转换为1；
+
+如果一个操作数是字符串，另一个操作数是数值，在比较相等性之前先将字符串转换为数值。<br/>
+
+12、理解参数（arguments）：（1）即便定义的函数只能接收两个参数，在调用这个函数时也未必一定要传递两个参数，可以传递一个、两个、三个甚至不传递参数，原因是参数在函数内部是用一个数组来表示。实际上，在函数体可以通过arguments对象来访问这个参数数组，从而获取传递给函数的每一个参数。其实，arguments对象只是与数组类似，可以使用方括号语法访问它的每一个元素；（2）arguments对象可以与命名参数一起使用
+                        <pre>
+                            function doAdd(num1,num2){
+                                 if(arguments.length == 1){
+                                    alert(num1 + 10);
+                                 }  else if(arguments.length == 2){
+                                    alert(arguments[0] + num2);
+                                 }
+                            }</pre>
+（3）arguments的值永远与对应命名参数的值保持同步
+                        <pre>
+                            function doAdd(num1,num2){
+                                 arguments[1] = 10;
+                                 alert(arguments[0] + num2);
+                            }
+这并不是说读取这两个值会访问相同的内存空间，arguments[1] 和 num2 的内存空间的独立的，但是它们的值是同步的。如果值传入一个
+参数，那么arguments[1]设置的值不会反应到命名参数中。没有传递值的命名参数将自动被赋予undefined值。 </pre>
+                    13、如果定义了两个名字相同的函数，则该名字只属于后者定义的函数。<br/>
+
+
+
+                </span>
+            <!--<a href="article2.html" class="last">-->
+                <!--<<< 巴蜀之旅（一）-->
+            <!--</a>-->
+            <a href="blog2.html" class="next">
+                JavaScript中变量、作用域和内存问题 >>>
+            </a>
+            <br/>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="myInfor">
+            <li>Tel 15229358320</li>
+            <li>Email 1029414295@qq.com</li>
+            <li>QQ 1029414295</li>
+            <li>School 西安电子科技大学</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<!--<script src="js/myWorld.js"></script>-->
+</body>
+</html>

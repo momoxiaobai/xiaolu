@@ -1,0 +1,101 @@
+.article,.blog{
+    margin-left:30px;
+    height:auto;
+    padding:30px;
+}
+/*.blog{*/
+    /*margin-left:30px;*/
+    /*height:auto;*/
+    /*padding:30px;*/
+/*}*/
+.article span{
+
+}
+.blog h3{
+    margin-top:10px;
+    margin-bottom:10px;
+    /*color:darkorange;*/
+}
+.blog h4{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.article h3{
+    text-align: center;
+    background-color: #e9cd6d;
+    padding: 30px;
+}
+/*从前慢歌词*/
+.songLyric{
+    padding:20px;
+    position: relative;
+    text-align: center;
+    background-color: #e9cd6d;
+    line-height: 30px;
+    background-image: url('images/cqm.jpg');
+    background-size: 30% auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-radius:6px;
+    box-shadow: 0 0 4px  #e9cd6d;
+    /*color:gray;*/
+}
+/*从前慢图片*/
+.cqm{
+    position: absolute;
+    width:330px;
+    height:auto;
+}
+audio{
+}
+
+.last{
+    display:inline-block;
+    color:blue;
+    margin-top:10px;
+}
+/*索引下一篇文章*/
+.next{
+    display:inline-block;
+    float:right;
+    color:blue;
+    margin-top:10px;
+}
+/*钟楼照片*/
+.article img{
+    width:200px;
+    height:auto;
+    /*float:left;*/
+    padding:15px;
+}
+.article .left{
+    float:left;
+}
+.article .right{
+    float:right;
+}
+
+/*.blog fieldset{*/
+    /*padding:10px;*/
+    /*font-size:13px;*/
+    /*background-color: #f5f5f5;*/
+    /*border:1px solid #cccccc;*/
+/*}*/
+.blog pre{
+    font-size:14px;
+    font-family: inherit;
+    background-color: #f5f5f5;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:1px solid #cccccc;
+}
+.blog img{
+    margin:0 auto;
+    /*width:90%;*/
+}
+
+.blog .girl{
+    width:90%;
+    /*width:300px;*/
+    /*height:500px;*/
+}

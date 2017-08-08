@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小鹿de小世界</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/myWorld.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="nav" >
+        <ul class="nav_items">
+            <li><a href="index.html" class="nav_item index">首页</a></li>
+            <li><a href="information.html" class="nav_item information">个人简介</a></li>
+            <li><a href="showWork.html" class="nav_item show">小作品展示</a></li>
+            <li><a href="project.html" class="nav_item project">项目展示</a></li>
+            <li><a href="myWorld.html" class="nav_item myWorld">小鹿de小世界</a></li>
+        </ul>
+
+        <a href="information.html" id="name">
+            <div class="picture"></div>
+        </a>
+        <span class="signature">不要懒惰，还有懂事些......</span>
+    </div>
+    <div class="context">
+        <div class="fold">
+            <img src="images/add.png"/>
+            <ul>
+                <li id="skill">前端技术</li>
+                <li id="lucky">日常小确幸</li>
+
+            </ul>
+        </div>
+        <div class="articles">
+            <div class="article">
+                <a href="article1.html"><h2>从前慢</h2></a>
+                <span>
+                嘿，今天新歌声开播了。好像周杰伦同学又胖了，大家都在调侃；
+                不过，这样的他看起来温暖多了，不像以前看起来那么高冷；可能岁月温暖了棱角。<br/>
+                    记得那年暑假还没有改名字，还是转椅子，还叫好声音，一起听他们唱歌，评论谁唱的好听，谁的声音太赞，那天听得什么歌基本都不记得了。
+                </span><br/><br/>
+                <a href="article1.html" class="readAll">阅读全文...</a>
+            </div>
+            <div class="article">
+                <a href="article2.html"><h2>巴蜀之旅（一）</h2></a>
+                <span>
+                一不小心就成为了研究生，距离女博士就差一步，这一步我是没有勇气迈出去了。老爸总说，你啊你啊最有福了，上学上这么多年。是啊，上学真好啊。<br/>
+                    西安是座古城，对于大部分人来说大概这就是第一印象。说实话，刚来西安那半年，对西安实在无感，可能因为好友都去了北京或者回家，感觉自己分外孤独，连着西安也喜欢不起来。
+
+                </span><br/><br/>
+                <a href="article2.html" class="readAll">阅读全文...</a>
+
+            </div>
+            <div class="article">
+                <a href="article3.html"><h2>巴蜀之旅（二）</h2></a>
+                <span>
+                一不小心就成为了研究生，距离女博士就差一步，这一步我是没有勇气迈出去了。老爸总说，你啊你啊最有福了，上学上这么多年。是啊，上学真好啊。<br/>
+                    西安是座古城，对于大部分人来说大概这就是第一印象。说实话，刚来西安那半年，对西安实在无感，可能因为好友都去了北京或者回家，感觉自己分外孤独，连着西安也喜欢不起来。
+
+                </span><br/><br/>
+                <a href="article3.html" class="readAll">阅读全文...</a>
+            </div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <div class="myBlog">
+            <div class="blog">
+                <a href="blog1.html"><h2>JavaScript高级程序设计中第2、3章中细节知识点</h2></a>
+                <span>
+               第2章<br/>
+                1、&ltscript&gtsrc='script.js' type='text/javascript'>&ltscript&gt中，只要不包含defer和async属性，浏览器都会按照&ltscript&gt<br/>
+                    元素在页面的出现顺序对它们依次进行解析。<br/>
+                    2、defer属性     &ltscript&gt中的defer属性的用途是表明脚本在执行时不会影响页面的构<br/>
+                    造，即，脚本会被延迟到整个页面都解析完毕后在运行。所以设置了defer属性就是相当于告诉浏览器立即下载但延迟执行。
+                </span><br/><br/>
+                <a href="blog1.html" class="readAll">阅读全文...</a>
+            </div>
+
+            <div class="blog">
+                <a href="blog2.html"><h2>JavaScript中变量、作用域和内存问题</h2></a>
+                <span>
+              一、变量<br/>
+                    （1）ECMAScript变量肯能包含两种不同的数据类型的值：基本类型值和引用类型值。基本类型值指的是简单的数据<br/>
+                    段，引用类型值指那些可能由多个值构成的对象。<br/>
+                    （2）基本数据类型是按值访问，可以操作保存在变量中的实际的值；引用类型的值是保存在内存中对象，操作对象时，实际上是<br/>
+                    在操作对象的引用而不是实际的对象，引用类型的值是按引用访问的。
+                </span><br/><br/>
+                <a href="blog2.html" class="readAll">阅读全文...</a>
+            </div>
+
+            <div class="blog">
+                <a href="blog3.html"><h2>JavaScript中离线应用和客户端存储（cookies、sessionStorage、localStorage）
+                </h2></a>
+                <span>
+               一、离线应用<br/>
+                所谓离线web应用，就是在设备不能上网的情况下仍然可以运行的应用。<br/>
+                开发离线web应用需要几个步骤：首先，确保应用知道设备是否能上网，以便下一步执行正确的操作；然后，应用还必须能访问一<br/>
+                    定的资源（图像、JavaScript、css等），只有这样才能正常工作；最后，必须有一块本地空间用于保存数据，无论能否上网都不妨碍读写。
+                </span><br/><br/>
+                <a href="blog3.html" class="readAll">阅读全文...</a>
+            </div>
+
+            <div class="blog">
+                <a href="blog4.html"><h2>引用类型（JavaScript第5章）</h2></a>
+                <span>
+              引用类型的值（对象）是引用类型的一个实例。在ECMScript中，引用类型是一种数据结构，用于将数据和功能组织在一起。<br/>
+               一、Object类型创建Object实例的方式有两种。<br/>
+                    第一种是使用new操作符后跟Object构造函数；另一种是使用对象字面量表示法。一般来说，访问对象属性时使用的都是点表示<br/>
+                    法，这也是很多面向对象语言中通用的语法。不过，在JavaScript中也可以使用方括号表示法来访问对象的属性。
+                </span><br/><br/>
+                <a href="blog4.html" class="readAll">阅读全文...</a>
+            </div>
+
+            <div class="blog">
+                <a href="blog5.html"><h2>关于自定义checkbox-radio标签的样式的方法</h2></a>
+                <span>
+
+                    label标签有一个很好的作用就是扩大表单控件元素的点击区域。一般有两种方法可以达到效果：（1）使用label标签包裹表<br/>
+                    单控件（2）设置label标签的for属性和表单的id属性一致这意味着有三种方式可以实现<br/>
+                    background-position属性设置背景图像的起始位置。
+                    注意对于这个工作在Firefox和Opera，background-attachment必须设置为 "fixed（固定）".
+                </span><br/><br/>
+                <a href="blog5.html" class="readAll">阅读全文...</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <ul class="myInfor">
+            <li>Tel 15229358320</li>
+            <li>Email 1029414295@qq.com</li>
+            <li>QQ 1029414295</li>
+            <li>School 西安电子科技大学</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/myWorld.js"></script>
+
+</body>
+</html>

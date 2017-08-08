@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关于自定义checkbox-radio标签的样式的方法</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/myWorld.css" type="text/css"/>
+    <link rel="stylesheet" href="css/article.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="nav" >
+        <ul class="nav_items">
+            <li><a href="index.html" class="nav_item index">首页</a></li>
+            <li><a href="information.html" class="nav_item information">个人简介</a></li>
+            <li><a href="showWork.html" class="nav_item show">小作品展示</a></li>
+            <li><a href="project.html" class="nav_item project">项目展示</a></li>
+            <li><a href="myWorld.html" class="nav_item myWorld">小鹿de小世界</a></li>
+        </ul>
+
+        <a href="information.html" id="name">
+            <div class="picture"></div>
+        </a>
+        <span class="signature">不要懒惰，还有懂事些......</span>
+    </div>
+    <div class="context">
+
+        <!--<div class="fold">-->
+            <!--<img src="images/add.png"/>-->
+            <!--<ul>-->
+                <!--<li>前端技术</li>-->
+                <!--<li>日常小确幸</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="blog">
+            <h2>关于自定义checkbox-radio标签的样式的方法</h2>
+                <span>
+label<br/>
+label标签有一个很好的作用就是扩大表单控件元素的点击区域。<br/>
+
+一般有两种方法可以达到效果：（1）使用label标签包裹表单控件（2）设置label标签的for属性和表单的id属性一致<br/>
+
+这意味着有三种方式可以实现<br/>
+                    <pre>1 &ltlabel for="checkbox">&lt/label>&ltinput type="checkbox" id="checkbox" />
+2 &ltlabel>&ltinput type="checkbox"  />&lt/label>
+3 &ltlabel for="checkbox">&ltinput type="checkbox" id="checkbox" />&lt/label></pre>
+                    for和id可访问性好于label标签包裹 最好选用第一种方式-------至于原因(http://www.zhangxinxu.com/wordpress/?p=1809 张鑫旭博客)
+<h4>background-position</h4>
+background-position属性设置背景图像的起始位置。<br/>
+
+注意对于这个工作在Firefox和Opera，background-attachment必须设置为 "fixed（固定）".
+                    <table border="1">
+                        <tr><td><h5>默认值:</h5></td><td>0% 0%</td></tr>
+                        <tr><td><h5>继承:</h5></td><td>no</td></tr>
+                        <tr><td><h5>版本:</h5></td><td>css1</td></tr>
+                        <tr><td><h5>JavaScript 语法:</h5></td><td><i>object object.style.backgroundPosition="center"</i></td></tr>
+                    </table>
+                    <h3>属性值</h3>
+                    <table border="1" cellspacing="0">
+                        <tr><td><b>值</b></td><td><b>描述</b></td></tr>
+                        <tr><td width="110px">left top<br/>
+                                left center  <br/>
+                                left bottom<br/>
+                                right top<br/>
+                                right center<br/>
+                                right bottom<br/>
+                                center top<br/>
+                                center center<br/>
+                                center bottom</td><td>如果仅指定一个关键字，其他值将会是"center"</td></tr>
+                        <tr><td>x% y%</td><td>第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。如果仅指定了一个值，其他值将是50％。 。默认值为：0％0％</td></tr>
+                        <tr><td>xpos ypos</td><td>第一个值是水平位置，第二个值是垂直。左上角是0。单位可以是像素（0px0px）或任何其他 CSS单位。如果仅指定了一个值，其他值将是50％。你可以混合使用％和positions</td></tr>
+                        <tr><td>inherit</td><td>指定background-position属性设置应该从父元素继承</td></tr>
+                    </table>
+                    <img src="images/blog/girl.png" class="girl"/>(1057x291)
+                    HTML代码：
+                    <pre>&ltlink rel="stylesheet" type="text/css" href="style.css" />
+&ltdiv class="div">
+&lt/div></pre>
+                    css:
+                    <pre>.div{
+    border:1px solid pink;
+    width:151px;
+    height:582px;
+    background:url(girl.png) no-repeat;
+    background-position:center;
+}</pre>
+                    效果如下：<br/>
+                    <img src="images/blog/girl1.png" /><br/>
+                    background-position:center top;<br/>
+<img src="images/blog/girl2.png"/><br/>
+                    其他效果可以想象；<br/>
+
+关于background-position：-xpx,-ypx;<br/>
+
+css:<br/>
+                    <pre>.div{
+     border:1px solid pink;
+     width:302px;
+     height:582px;
+     background:url(girl.png) no-repeat;
+     background-position:0px 0px;
+ }
+</pre>
+                    效果：<br/>
+                    <img src="images/blog/girl3.png"/><br/>
+                    background-position：-151px -100px;
+                    效果：<br/>
+<img src="images/blog/girl4.png"/><br/>
+<h3>关于checkbox/radio表单自定义样式</h3>
+两种方法：<br/>
+
+需要将表单元素进行隐藏：display:none;或者visibility：hidden；<br/>
+                    <1>伪元素法：<br/>
+HTML：<br/>
+                    <pre>&ltinput type="radio" id="radio1" name="radio" class="radio" /> &ltlabel for="radio1" > &lt/label>
+ &ltinput type="checkbox" id="checkbox1" name="checkbox1" class="checkbox">&ltlabel for="checkbox1">&lt/label></pre>
+css:
+                    <pre>/*此处使用了兄弟选择器  在HTML中label标签在input标签的后面*/
+.radio+label{
+    border-radius: 50%;
+    width:16px;
+    height: 16px;
+    border:1px solid #d9d9d9;
+    display: inline-block;
+}
+.radio:checked+label,.checkbox:checked+label{
+    border:1px solid #d73d32;
+}
+.radio:checked+label:before{
+    border-radius: 50%;
+    width:8px;
+    height:8px;
+    line-height: 8px;
+    position:relative;
+    top:-30%;
+    content: '';
+    display: inline-block;
+    text-align: center;
+    background: #d73d32;
+}
+.checkbox+label{
+    width:16px;
+    height:16px;
+    border:1px solid #d9d9d9;
+    display: inline-block;
+}
+.checkbox:checked+label:before{
+    width:8px;
+    height:8px;
+    line-height: 8px;
+    position:relative;
+    top:-25%;
+    content: '\2713'; /*使用特殊字符需要加斜杠*/
+    color:#d73d32;
+    display: inline-block;
+    text-align: center;
+}</pre>
+<2>雪碧图的方法：<br/>
+                    HTML<br/>
+                    <pre> &ltinput type="radio" id="radio1_sprite" name="radio" class="radio_sprite" /> &ltlabel for="radio1_sprite" > &lt/label>
+&ltinput type="checkbox" id="checkbox1_sprite" name="checkbox1" class="checkbox_sprite"><br/>&ltlabel for="checkbox1_sprite">&lt/label></pre>
+                    css：
+                    <pre>.radio_sprite+label,.checkbox_sprite+label{
+    width:16px;
+    height:16px;
+    background: url(ck/bg.png) no-repeat;
+    display: inline-block;
+}
+.radio_sprite+label{
+    background-position: -24px -10px;
+}
+.radio_sprite:checked+label{
+    background-position: -59px -10px;
+}
+.checkbox_sprite+label{
+    background-position: -24px -32px;
+}
+.checkbox_sprite:checked+label{
+    background-position: -59px -32px;
+}</pre>
+
+
+                        <h4>雪碧图定义：</h4>CSS雪碧 即CSS Sprites，也有人叫它CSS精灵，是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。<br/>
+
+CSS雪碧的基本原理是把你的网站上用到的一些图片整合到一张单独的图片中，从而减少你的网站的HTTP请求数量。该图片使用CSS background和background-position属性渲染，这也就意味着你的标签变得更加复杂了，图片是在CSS中定义，而非&ltimg>标签。
+
+<h3>优点</h3>
+<h4>减少加载网页图片时对服务器的请求次数</h4>
+
+可以合并多数背景图片和小图标，方便在任何位置使用，这样不同位置的请求只需要调用一个图片，从而减少对服务器的请求次数，降低服务器压力，同时提高了页面的加载速度，节约服务器的流量。
+
+<h4>提高页面的加载速度</h4>
+
+sprite 技术的其中一个好处是图片的加载时间(在有许多 sprite 时，单张图片的加载时间)。由所需图片拼成的一张 GIF 图片的尺寸会明显小于所有图片拼合前的大小。单张的 GIF 只有相关的一个色表，而单独分割的每一张 GIF 都有自己的一个色表，这就增加了总体的大小。因此，单独的一张 JPEG 或者 PNG sprite 在大小上非常可能比把一张图分成多张得来的图片总尺寸小。
+
+<h4>减少鼠标滑过的一些bug</h4>
+
+IE6不会主动预加载鼠标滑过即a:hover中的背景图片，所以，如果使用多张图片，鼠标滑过会出现闪白的现象。使用CSS雪碧，由于一张图片即可，所以不会出现这种现象。
+
+​<h3>不足</h3>
+<h4>CSS雪碧的最大问题是内存使用</h4>
+
+除非这个雪碧图片是被非常小心的组织，你就会最终使用大量的无用的空白。一个例子是来自于WHIT TV的网站。注意这是一个1299×15,000像素的PNG图片。它也被压缩的很好--实际下载大小只有大概26K - 但是浏览器并不会渲染压缩后的图片数据。当这个图片被下载并被解压缩之后，它将占用差不多75MB的内存 (1299 * 15000 * 4)。如果这个图片并没有使用alpha透明，它将会被优化至1299 * 15000 * 3，但是要在损失渲染速度的情况下。即使那样，我们也会讨论55MB。这张图片的大部分其实就是空白，那里什么都没有，没有任何有用的内容。只是加载 WHIT主页 就会导致你的浏览器的内存占用上升到至少75+MB，仅仅是因为那一张图片。(PS:遗憾的是，该网站最近已经改版，文中提到的图片已经不存在了)
+
+                    <h4>影响浏览器的缩放功能</h4>
+
+如果一个使用CSS雪碧的页面使用一些浏览器提供的整页缩放功能缩放了，浏览器就需要做一些额外的工作来纠正这些图片边缘的行为--基本上来说，是为了避免雪碧中相邻的图片被"露进来"。这对于小图片没有什么问题，但是对于大图片会是一个性能下降。
+
+                    <h4>拼图维护比较麻烦</h4>
+
+拼合这么多图片，需要耐心。同时还要时刻思考如何在使用这个图片是不会产生相互的影响。将又瘦又高的图片和又宽又矮的图片放到一起时，不容易操作。如果要修改雪碧中的一个图片，你就要修改整张图片，这无疑会增大工作量。
+
+                    <h4>使CSS的编写变得困难</h4>
+
+如果CSS雪碧足够复杂，则大大增加了CSS的代码量和难度，让维护和修改变得困难起来。
+
+                    <h4>CSS雪碧调用的图片不能被打印</h4>
+
+CSS 雪碧调用的图片不能被打印，除非在@media中特别添加 print声明。
+
+                    <h4>错误得使用Sprites影响可访问性</h4>
+
+一些刚入门的开发人员会为了节省 HTTP 请求数(这是使用 CSS Sprite 一直强调的好处)而把所有的图片都当背景图片来处理 – 甚至是那些传达重要信息的图片。结果会导致一个缺乏可访问性的网站，也会降低 HTML 中 title 和 alt 的潜在益处。<br/>
+
+因此，CSS sprite 本身没错，而且也不会引发可访问性问题(事实上，正确得使用会提高可访问性)。但是不分对错的过度使用 sprite 会阻碍具有可访问性和生产率方面的网页建设进程。<br/>
+                </span>
+            <a href="blog4.html" class="last">
+                <<< 引用类型（JavaScript第5章）
+            </a>
+            <!--<a href="article3.html" class="next">-->
+                <!--巴蜀之旅（二） >>>-->
+            <!--</a>-->
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="myInfor">
+            <li>Tel 15229358320</li>
+            <li>Email 1029414295@qq.com</li>
+            <li>QQ 1029414295</li>
+            <li>School 西安电子科技大学</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<!--<script src="js/myWorld.js"></script>-->
+</body>
+</html>

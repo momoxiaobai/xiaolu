@@ -1,0 +1,85 @@
+.nav_items .project{
+    color:darkorange;
+}
+.context{
+    width:1000px;
+    min-width:1000px;
+    margin:0 auto;
+    height:1200px;
+}
+/*具体项目div */
+.project_item{
+    padding:20px;
+    position: relative;
+    height:auto;
+    /*background-color:darkorange;*/
+}
+.projectIntro{
+    width:40%;
+    height:auto;
+    box-shadow:0 0 3px gray;
+    padding: 15px;
+    float:left;
+    /*display: inline;*/
+    /*background-color: red;*/
+}
+.projectIntro h2{
+    margin-bottom: 10px;
+}
+
+.projectIntro span{
+    line-height:30px;
+}
+.projectImg{
+    position: relative;
+    top:0;
+    /*display: inline;*/
+    width:55%;
+    float:right;
+    background-color: pink;
+}
+.projectImg img{
+    /*opacity: 0.7;*/
+    width:80%;
+    position: absolute;
+    box-shadow: 0 0 14px #dedede;
+}
+.projectImg img:nth-of-type(1){
+     /*width:80%;*/
+    box-shadow: 0 0 18px #dedede;
+ }
+.projectImg img:nth-of-type(2){
+    width:70%;
+    left:190px;
+    top:150px;
+}
+.projectImg img:nth-of-type(3){
+    width:70%;
+    /*left:10px;*/
+    top:300px;
+}
+.projectImg img:nth-of-type(4){
+    width:60%;
+    left:110px;
+    top:450px;
+}
+/*table{*/
+    /*border-collapse: collapse;*/
+    /*border:2.5px solid blue;*/
+    /*border-collapse: 0px;*/
+    /*text-align:center;*/
+    /*vertical-align:middle;*/
+/*}*/
+/*table tr{*/
+    /*border:5px solid blue;*/
+/*}*/
+/*table tr td{*/
+    /*width:50px;*/
+    /*height:50px;*/
+    /*border:5px inset blue;*/
+    /*z-index:4;*/
+/*}*/
+/*table tr td:hover{*/
+    /*border:5px solid red;*/
+    /*z-index:4;*/
+/*}*/

@@ -1,0 +1,190 @@
+.container{
+    /*min-width: 100%;*/
+}
+.nav_items .information{
+    color:darkorange;
+}
+
+/*导航栏个人头像*/
+/*.picture{*/
+    /*width:150px;*/
+    /*height:150px;*/
+    /*border-radius:50%;*/
+    /*border:1px solid orange;*/
+    /*position:relative;*/
+    /*top:6%;*/
+    /*left:13%;*/
+    /*background-image:url('images/picture.jpg');*/
+    /*background-size:cover;*/
+    /*cursor:pointer;*/
+/*}*/
+/*.picture:hover{*/
+    /*border:1px solid #FF7306;*/
+/*}*/
+/*个人头像下的签名*/
+.signature{
+    display:block;
+    margin-left:180px;
+    margin-top:17px;
+    font-size:15px;
+    color:gray;
+    font-family:"Microsoft YaHei";
+}
+
+/*基本信息*/
+.basic_information,.education_experience,.skill,.work_experience,.hobby{
+    text-align:center;
+    margin-top:30px;
+}
+/*展示基本信息表格*/
+.table{
+    margin:10px auto;
+    text-align:left;
+    font-family: 'Microsoft YaHei';
+}
+.table tr{
+    height:30px;
+}
+.table tr td{
+    width:30%;
+    height:45px;
+}
+
+/*项目经历*/
+.project{
+    /*text-align:center;*/
+    position:relative;
+}
+/*项目垂直线*/
+.project i{
+    /*color:red;*/
+    display: inline-block;
+    width:2px;
+    height:700px;
+    background-color: #c4c4c4;
+    margin:0 auto;
+    margin-top:20px;
+}
+/*项目经历的小人标志图案*/
+.project i img{
+    margin-left:-9px;
+}
+/*具体项目*/
+.project1,.project2,.project3,.project4{
+    position:absolute;
+    width:250px;
+    height:auto;
+    box-shadow:0 0 12px grey;
+    border-radius:5px;
+    text-align: left;
+    padding:10px;
+}
+/*项目标题*/
+h5{
+    color:darkorange;
+    text-align: center;
+}
+/*项目1*/
+.project1{
+    top:9%;
+    left:53%;
+}
+/*项目内容说明*/
+.introduce_project{
+    text-align:left;
+    font-size:12px;
+    color:gray;
+}
+/*项目1垂直线上的点*/
+.project1::before{
+    position:absolute;
+    left:-42px;
+    top:15%;
+    content:'';
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background-color: gray;
+}
+/*项目2  七夕情缘*/
+.project2{
+    top:27%;
+    left:23.1%;
+    width:295px;
+}
+/*项目2垂直线上的点*/
+.project2::after{
+    position:absolute;
+    left:361px;
+    top:9%;
+    content:'';
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background-color: gray;
+}
+/*项目3 个人主页*/
+.project3 .introduce_project{
+    text-align:left;
+}
+.project3{
+    top:57%;
+    left:53%;
+}
+.project3::before{
+    position:absolute;
+    left:-42px;
+    top:10%;
+    content:'';
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background-color: gray;
+}
+/*项目4 学生管理系统*/
+.project4{
+    width:260px;
+    text-align: left;
+    top:80%;
+    left:26%;
+}
+.project4::before{
+    position:absolute;
+    left:322px;
+    top:11%;
+    content:'';
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background-color: gray;
+}
+/*兴趣爱好*/
+.hobby{
+    /*width:160px;*/
+    height:220px;
+}
+.hobby ul{
+    margin:20px auto;
+    /*width:100%;*/
+    /*margin:0 auto;*/
+    height:40px;
+    text-align:center;
+}
+
+.hobby ul li{
+    /*float:left;*/
+    width:25%;
+    margin:0 auto;
+    color:gray;
+    float:left;
+    list-style:none;
+    /*margin-top:10px;*/
+    /*display: inline-block;*/
+}
+.hobby ul li img{
+    width:100px;
+    height:100px;
+    display: inline-block;
+    border:3px solid darkorange;
+    border-radius:50%;
+}

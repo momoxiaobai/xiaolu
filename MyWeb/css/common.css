@@ -1,0 +1,64 @@
+/*������*/
+.nav{
+    height:200px;
+    background-image:url("images/002.jpg");
+    background-size: 100% 100%;
+}
+.context{
+
+}
+/*导航栏个人头像*/
+#name{
+    width:150px;
+    height:150px;
+    display: inline-block;
+    border-radius:50%;
+    border:1px solid orange;
+    /*position:absolute;*/
+    /*top:11%;*/
+    /*left:13%;*/
+    margin-top:15px;
+    margin-left:140px;
+    background-image:url('images/picture.jpg');
+    background-size:cover;
+    cursor:pointer;
+}
+#name:hover{
+    border:1px solid #FF7306;
+}
+/*个人头像下的签名*/
+.signature{
+    display:block;
+    margin-left:130px;
+    margin-top:5px;
+    font-size:15px;
+    color:gray;
+    font-family:"Microsoft YaHei";
+}
+.footer{
+    height:40px;
+    background-color: dimgray;
+}
+/*.footer a{*/
+    /*position:relative;*/
+    /*bottom:0%;*/
+    /*right:60px;*/
+    /*top:-25px;*/
+/*}*/
+/*��ҳ���¶˵���Ϣ*/
+.myInfor{
+    width:70%;
+    margin:0 auto;
+    height:40px;
+    text-align:center;
+}
+/*��ҳ���¶˵���Ϣ*/
+.myInfor li{
+    width:25%;
+    margin:0 auto;
+    color:white;
+    float:left;
+    list-style:none;
+    margin-top:10px;
+
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript中离线应用和客户端存储（cookies、sessionStorage、localStorage）</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/myWorld.css" type="text/css"/>
+    <link rel="stylesheet" href="css/article.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="nav" >
+        <ul class="nav_items">
+            <li><a href="index.html" class="nav_item index">首页</a></li>
+            <li><a href="information.html" class="nav_item information">个人简介</a></li>
+            <li><a href="showWork.html" class="nav_item show">小作品展示</a></li>
+            <li><a href="project.html" class="nav_item project">项目展示</a></li>
+            <li><a href="myWorld.html" class="nav_item myWorld">小鹿de小世界</a></li>
+        </ul>
+
+        <a href="information.html" id="name">
+            <div class="picture"></div>
+        </a>
+        <span class="signature">不要懒惰，还有懂事些......</span>
+    </div>
+    <div class="context">
+
+        <!--<div class="fold">-->
+            <!--<img src="images/add.png"/>-->
+            <!--<ul>-->
+                <!--<li>前端技术</li>-->
+                <!--<li>日常小确幸</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="blog">
+            <h2>JavaScript中离线应用和客户端存储(cookies、sessionStorage、localStorage)</h2>
+                <span>
+
+                    <h3>一、离线应用</h3>
+所谓离线web应用，就是在设备不能上网的情况下仍然可以运行的应用。<br/>
+
+开发离线web应用需要几个步骤：首先，确保应用知道设备是否能上网，以便下一步执行正确的操作；然后，应用还必须能访问一定的资源（图像、JavaScript、css等），只有这样才能正常工作；最后，必须有一块本地空间用于保存数据，无论能否上网都不妨碍读写。
+
+<h4>1、离线检测</h4>
+HTML5定义一个navigator.onLine属性，这个属性值为true表示设备能上网，值为false表示设备离线。<br/>
+
+除了navigator.onLine属性之外，HTML5还定义了两个事件：online和offline。当网络从离线变为在线或者从在线变为离线时，分别触发这两个事件。<br/>
+
+为了检测应用是否离线，在页面加载后，最好先通过navigator.onLine取得初始的状态。然后，就是通过上述两个事件来确定网络连接状态是否变化。当上述事件触发时，navigator.onLine属性的值也会改变，不过必须手工轮询这个属性才能检测到网络状态的变化。
+
+<h4>2、应用缓存</h4>
+HTML5的应用缓存，或者简称为appcache，是专门为开发离线Web应用而设计的。Appcache就是从浏览器的缓存中分出来的一块缓存区。
+                    <h3>二、数据存储</h3>
+<h4>1、cookie</h4>
+是在客户端用于存储会话信息的。该标准要求服务器对任意http请求发送Set-Cookie Http头作为响应头的一部分，其中包括会话信息。<br/>
+
+<b>限制</b><br/>
+
+cookie在性质上是绑定在特定的域名下的。当设定了一个cookie后，再创建它的域名发送请求时，都会包含这个cookie。<br/>
+
+由于cookie是存在客户端计算机上的，还加入了一些限制确保cookie不会被恶意使用，同时不会占用太多磁盘空间。<br/>
+
+1、IE6以及更低版本限制每个域名最多20个cookie<br/>
+
+2、IE7和之后版本每个域名最多50个。<br/>
+
+3、Firefox限制每个域最多50个cookie。<br/>
+
+4、Opera限制每个域最多30个cookie。<br/>
+
+5、Safari和Chrome对于每个域的cookie数量限制没有硬性规定。<br/>
+
+浏览器中对于cookie的尺寸也有限制。大多数浏览器都有大约4096B（加减1）的长度限制。为了最佳的浏览器兼容性，最好将整个cookie长度限制在4095B（含4095）
+
+以内。
+
+<h4>2、IE用户数据</h4>
+在IE5.0中，微软通过一个自定义行为引入了持久化用户数据的概念。用户数据允许每个文档最多128KB数据，每个域名最多1MB数据。
+<pre>
+    &ltdiv style="behavior:url(#default#userData)" id="dataStore">&lt/div>
+
+ var dataStore = document.getElementById("dataStore");
+ dataStore.setAttribute("name","xiaolu");
+ dataStore.setAttribute("book","javaScript");
+ dataStore.save("BookInfo");
+
+在这段代码中，&ltdiv>元素上存入了两部分信息。在用setAttribute()存储数据之后，调用了save()方法，指定了数据空间的名称为BookInfo。
+    <br/>下一次页面载入之后，可以使用load()方法指定同样的数据空间名称来获取数据；
+
+    dataStore.load("BookInfo");
+
+    alert(dataStore.getAttribute("name"));  //xiaolu
+    alert(dataStore.getAttribute("book"));   //javaScript
+</pre>
+可以通过removeAttribute()方法明确指定要删除某元素数据，只要指定属性名称。删除之后，必须要再次调用save()来提交更改。
+<pre>
+    dataStore.removeAttribute("name","xiaolu");
+    dataStore.removeAttribute("book","javaScript");
+    dataStore.save("BookInfo");
+</pre>
+                    对IE用户数据的访问限制和对cookie的限制类似。要访问某个数据空间，脚本运行的页面必须来自同一个域名，在同一个路径下，并使用与进行存储的脚本同样的协议。<br/>
+
+和cookie不同的是，你无法将用户数据访问限制扩展到更多的客户。还有一点不同，用户数据默认是可以跨越会话持久存在的，同时也不会过期；数据需要通过removeAttribute()方法专门进行删除以释放空间。<br/>
+
+cookie和IE用户数据并非安全，所以不能存放敏感信息。
+                    <h3>三、Web存储机制</h3>
+<h4>1、sessionStorage对象</h4>
+sessionStorage对象存储特定于某个会话的数据，也就是该数据只保持到浏览器关闭。
+
+<h4>2、localStorage对象</h4>
+要访问同一个localStorage对象，页面必须来自同一个域名（子域名无效），使用同一种协议，在同一个端口上。数据保留到通过JavaScript删除或者是用户清除浏览器缓存。
+
+限制：对于localStorage而言，大多数桌面浏览器会设置每个来源5MB的限制，Chrome和Safari对每个来源的限制是2.5MB。而iOS版的Safari和Android版的webkit的限制也是2.5MB
+
+对sessionStorage的贤惠也是因浏览器而异。有的浏览器对sessionStorage的大小没有限制，但Chrome、Safari、iOS版Safari和Android版Webkit都有限制，也就是2.5MB。IE8+和Opera对sessionStorage的限制是5MB。
+
+<h4>3.indexedDB</h4>
+是在浏览器中保存结构化数据的一种数据库。最大特色是使用对象保存数据，而不是使用表来保存数据。
+
+<h3>Web storage 和cookie的区别</h3>
+Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。<br/>
+
+除此之外，Web Storage拥有setItem，getItem，removeItem，clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。
+
+但是Cookie是不可或缺的Lcookie的作用是和服务器进行交互，作为HTTP规范的一部分而存在，而Web Storage仅仅是为了在本地“存储”数据而生。
+
+浏览器的支持处理IE7及以下不支持外，其他标准浏览器都完全支持，值得一提的是，IE7、IE6中的userData其实就是JavaScript本地存储的解决方案。通过简单的代码封装可以统一到所有的浏览器都支持Web Storage<br/>
+
+localStorage和sessionStorage都具有相同的操作方法，例如setItem，getItem，removeItem等。
+
+                </span>
+            <a href="blog2.html" class="last">
+                <<< JavaScript中变量、作用域和内存问题
+            </a>
+            <a href="blog4.html" class="next">
+                引用类型（JavaScript第5章） >>>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="myInfor">
+            <li>Tel 15229358320</li>
+            <li>Email 1029414295@qq.com</li>
+            <li>QQ 1029414295</li>
+            <li>School 西安电子科技大学</li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<!--<script src="js/myWorld.js"></script>-->
+</body>
+</html>
