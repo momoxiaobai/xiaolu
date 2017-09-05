@@ -92,5 +92,4 @@ function pointerMove(){
             window.msRequestAnimationFrame,
         startTime = window.mozAnimationStartTime || Date.now();
     requestAnimationFrame(draw);
-
 }
