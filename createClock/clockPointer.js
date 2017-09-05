@@ -54,13 +54,14 @@ function clockPointerMove(degreeSecond,degreeMin,degreeHour){
 
 //根据当地时间初始化时钟
 function pointerMove(){
-    var disDegreeOfSecond = Math.PI/30;//一秒秒针走得度数
+   var disDegreeOfSecond = Math.PI/30;//一秒秒针走得度数
     var disDegreeOfMin = Math.PI/1800;//一秒分针走的度数
     var disDegreeOfHour = Math.PI/21600;//一秒时针走的度数
     var date = new Date();
     var hour = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
+    var millSeconds = date.getMilliseconds();
     var degreeS,degreeM,degreeH;
     hour = date.getHours();//获得小时数
     minutes = date.getMinutes();//获得分钟数
@@ -72,26 +73,24 @@ function pointerMove(){
     }
     degreeH = (seconds + minutes * 60 + hour * 3600) * disDegreeOfHour;//初始化时针应在的位置
     clockPointerMove(degreeS,degreeM,degreeH); //初始化时钟
-    setInterval(function(){
+    function draw(){
+        var drawStart = Date.now(),
+            diff = drawStart - startTime;
+        startTime = drawStart;
+        //console.log(diff);
+        degreeS += disDegreeOfSecond * diff/1000;
+        degreeM += disDegreeOfMin * diff/1000;
+        degreeH += disDegreeOfHour * diff/1000;
         cxt.clearRect(0,0,canvas.width,canvas.height);
         clockStyle();
-        date = new Date();
-        hour = date.getHours();
-        minutes = date.getMinutes();
-        seconds = date.getSeconds();
-        //millSeconds = date.getMilliseconds();
-
-        degreeS = seconds * disDegreeOfSecond;
-       // degreeS += disDegreeOfSecond * 17/1000;
-       // degreeM += disDegreeOfMin * 17/1000;
-         degreeM = disDegreeOfMin * (seconds + minutes * 60);
-      if(hour > 12){
-           hour -= 12;
-        }
-        
-        degreeH = disDegreeOfHour * (seconds + minutes * 60 + hour * 3600);
-        //degreeH += disDegreeOfHour * 17/1000;
-        clockPointerMove(degreeS,degreeM,degreeH);//每17毫秒，秒，分，时针应改变的度数；17毫秒动画比较平滑
-    },1000);
+        clockPointerMove(degreeS,degreeM,degreeH);
+        requestAnimationFrame(draw);
+    }
+    var requestAnimationFrame = window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame,
+        startTime = window.mozAnimationStartTime || Date.now();
+    requestAnimationFrame(draw);
 
 }
